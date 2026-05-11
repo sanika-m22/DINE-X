@@ -2,23 +2,14 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || 'https://dine-x.onrender.com/api';
 
+import { type Restaurant } from '../data/restaurants';
+
 export const api = axios.create({
   baseURL: API_URL,
 });
 
-export interface Restaurant {
-  _id?: string;
-  id?: string; // for backward compatibility
-  name: string;
-  cuisine: string[];
-  rating: number;
-  budget: number;
-  location: string;
-  image: string;
-  matchScore: number;
-  lat: number;
-  lng: number;
-}
+export { type Restaurant };
+
 
 export const fetchRestaurants = async (): Promise<Restaurant[]> => {
   const response = await api.get('/restaurants');
