@@ -14,7 +14,7 @@ import BottomNav from './components/BottomNav';
 
 const App: React.FC = () => {
   return (
-    <Router basename="/DineX/">
+    <Router>
       <div className="min-h-screen bg-dark-bg text-text-main font-sans selection:bg-primary-500/30 pb-24">
         <Routes>
           <Route path="/" element={<LandingPage />} />
